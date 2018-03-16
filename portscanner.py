@@ -42,7 +42,7 @@ def scanRange(network, start, end):
 
 if __name__ == "__main__":
 	if len(sys.argv) == 4:
-		ip		= str(sys.argv[1])
+		ip	= str(sys.argv[1])
 		start 	= int(sys.argv[2])
 		end 	= int(sys.argv[3])
 		scanHost(ip, start, end)
@@ -50,7 +50,7 @@ if __name__ == "__main__":
 	elif len(sys.argv) == 5 and sys.argv[4] == "-n":
 		network	= str(sys.argv[1])
 		start	= int(sys.argv[2])
-		end		= int(sys.argv[3])
+		end	= int(sys.argv[3])
 		scanRange(network, start, end)
 
 	else:
