@@ -6,12 +6,12 @@ import sys
 def scanHost(ip, startPort, endPort):
     """ Starts a TCP scan on a given IP address """
 
-    print("[+] Starting TCP port scan on host %s" % ip)
+    print('[+] Starting TCP port scan on host %s' % ip)
 
     #Begin TCP scan on host
     tcp_scan(ip, startPort, endPort)
 
-    print("[+] TCP scan on host %s complete" % ip)
+    print('[+] TCP scan on host %s complete' % ip)
 
 
 def scanRange(network, startPort, endPort):
@@ -19,17 +19,17 @@ def scanRange(network, startPort, endPort):
         Starts a TCP scan on the range of IP addresses
     """
 
-    print("[+] Starting TCP port scan on network %s.0" % network)
+    print('[+] Starting TCP port scan on network %s.0' % network)
 
     for host in range (1, 255):
 
         #Iterate range of host IP addresses and concatenate to network string
-        ip = network + "." + str(host)
+        ip = network + '.' + str(host)
 
         #Begin TCP scan on host
         tcp_scan(ip, startPort, endPort)
 
-    print("[+] TCP scan on network %s.0 complete" % network)
+    print('[+] TCP scan on network %s.0 complete' % network)
 
 
 def tcp_scan(ip, startPort, endPort):
@@ -42,13 +42,13 @@ def tcp_scan(ip, startPort, endPort):
 
         #TCP connection returns an exception (aka != 0)
         if tcp.connect_ex((ip, port)):
-            
+
             pass
 
         #TCP connection returns no exceptions (0)
         else:
 
-            print("[+] %s:%d/TCP Open" % (ip, port))
+            print('[+] %s:%d/TCP Open' % (ip, port))
 
             #Close TCP connection
             tcp.close()
@@ -61,10 +61,10 @@ if __name__ == '__main__':
 
     if len(sys.argv) < 4:
 
-        print("Usage: ./portscanner.py [IP address] [start port] [end port]")
-        print("Example: ./portscanner.py 192.168.1.10 1 65535\n")
-        print("Usage: ./portscanner.py [network] [start port] [end port] -n")
-        print("Example: ./portscanner.py 192.168.1 1 65535 -n")
+        print('Usage: ./portscanner.py [IP address] [start port] [end port]')
+        print('Example: ./portscanner.py 192.168.1.10 1 65535\n')
+        print('Usage: ./portscanner.py [network] [start port] [end port] -n')
+        print('Example: ./portscanner.py 192.168.1 1 65535 -n')
 
     elif len(sys.argv) >= 4:
 
