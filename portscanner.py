@@ -6,7 +6,7 @@ import sys
 def scanHost(ip, startPort, endPort):
     """ Starts a TCP scan on a given IP address """
 
-    print('[+] Starting TCP port scan on host %s' % ip)
+    print('[*] Starting TCP port scan on host %s' % ip)
 
     # Begin TCP scan on host
     tcp_scan(ip, startPort, endPort)
@@ -17,7 +17,7 @@ def scanHost(ip, startPort, endPort):
 def scanRange(network, startPort, endPort):
     """ Starts a TCP scan on a given IP address range """
 
-    print('[+] Starting TCP port scan on network %s.0' % network)
+    print('[*] Starting TCP port scan on network %s.0' % network)
 
     # Iterate over a range of host IP addresses and scan each target
     for host in range(1, 255):
@@ -36,7 +36,7 @@ def tcp_scan(ip, startPort, endPort):
             tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             
             # Print if the port is open
-            if not tcp.connect_ex(('127.0.0.1', port)):
+            if not tcp.connect_ex((ip, port)):
                 print('[+] %s:%d/TCP Open' % (ip, port))
                 tcp.close()
                 
