@@ -49,9 +49,9 @@ if __name__ == '__main__':
     socket.setdefaulttimeout(0.01)
 
     if len(sys.argv) < 4:
-        print('Usage: ./portscanner.py [IP address] [start port] [end port]')
+        print('Usage: ./portscanner.py <IP address> <start port> <end port>')
         print('Example: ./portscanner.py 192.168.1.10 1 65535\n')
-        print('Usage: ./portscanner.py [network] [start port] [end port] -n')
+        print('Usage: ./portscanner.py <network> <start port> <end port> -n')
         print('Example: ./portscanner.py 192.168.1 1 65535 -n')
 
     elif len(sys.argv) >= 4:
