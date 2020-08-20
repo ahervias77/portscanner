@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import socket
 import sys
-
+#Dekho aloy aloy akash
 
 def scanHost(ip, startPort, endPort):
     """ Starts a TCP scan on a given IP address """
